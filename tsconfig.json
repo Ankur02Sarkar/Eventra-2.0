@@ -6,9 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "useDefineForClassFields": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

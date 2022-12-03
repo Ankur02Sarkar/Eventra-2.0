@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://eventradb.herokuapp.com/api";
+const API = "https://eventradb.cyclic.app/api";
 
 const initialState = {
   isLoading: false,

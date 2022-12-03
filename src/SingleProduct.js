@@ -13,7 +13,7 @@ import AddToCart from "./components/AddToCart";
 import { useFilterContext } from "./context/filter_context";
 import React from "react";
 
-const API = "https://eventradb.herokuapp.com/api";
+const API = "https://eventradb.cyclic.app/api";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -23,23 +23,6 @@ const SingleProduct = () => {
 
   const { id } = useParams();
   console.log("URL ID is, ", id);
-  {
-    // const{
-    //   id: alias,
-    //   name,
-    //   company,
-    //   price,
-    //   description,
-    //   category,
-    //   stock,
-    //   stars,
-    //   reviews,
-    //   image,
-    // } = singleProduct;
-    // useEffect(() => {
-    //   getSingleProduct(`${API}?id=${id}`);
-    // }, []);
-  }
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
   }
@@ -98,7 +81,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p> Delivered </p>
               </div>
 
               <div className="product-warranty-data">
@@ -119,7 +102,7 @@ const SingleProduct = () => {
               </p>
             </div>
             <hr />
-            {/* {stock > 0 && <AddToCart product={singleProduct} />}  */}
+            {/* {stock > 0 && <AddToCart product={singleProduct} />} */}
           </div>
         </div>
       </Container>
