@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav";
+import Eventra from "../assets/Eventra logo.png"
 
 const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src="https://i.ibb.co/09Hj7FY/Eventra-modified-1.png" alt="my logo img" style={{width: "100px"}} />
+        <img src={Eventra} alt="my logo img" style={{width: "100px"}} />
       </NavLink>
       <Nav />
     </MainHeader>

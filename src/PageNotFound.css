@@ -1,0 +1,40 @@
+/* .txt p {
+  text-align: center;
+  font-size: 32px;
+}
+.txt h1 {
+  font-size: 47px;
+  text-align: center;
+}
+.cntr img {
+  width: 100%;
+  height: 100%;
+}
+.cntr {
+    margin-top: 3%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
+.txt p {
+  text-align: center;
+  font-size: 32px;
+  margin-top: -7%;
+}
+.txt h1 {
+  font-size: 47px;
+  text-align: center;
+}
+.cntr img {
+  width: 100%;
+  height: 100%;
+}
+
+.cntr{
+    margin-top: 3%;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

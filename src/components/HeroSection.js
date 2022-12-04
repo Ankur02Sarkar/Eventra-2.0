@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
-
+import Eventra from "../assets/Eventra logo.png"
 const HeroSection = ({ myData }) => {
   const { name } = myData;
 
@@ -25,7 +25,8 @@ const HeroSection = ({ myData }) => {
           <div className="hero-section-image">
             <figure>
               <img
-                src="images/hero.jpg"
+                // src="images/hero.jpg"
+                src={Eventra}
                 alt="hero-section-photo"
                 className="img-style"
               />
@@ -39,13 +40,20 @@ const HeroSection = ({ myData }) => {
 
 const Wrapper = styled.section`
   padding: 12rem 0;
-
+  /* .grid-two-column{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  } */
   img {
     min-width: 10rem;
     height: 10rem;
   }
 
   .hero-section-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     p {
       margin: 2rem 0;
     }
@@ -70,7 +78,7 @@ const Wrapper = styled.section`
   figure {
     position: relative;
 
-    &::after {
+    /* &::after {
       content: "";
       width: 60%;
       height: 80%;
@@ -79,7 +87,7 @@ const Wrapper = styled.section`
       left: 50%;
       top: -5rem;
       z-index: -1;
-    }
+    } */
   }
   .img-style {
     width: 100%;
