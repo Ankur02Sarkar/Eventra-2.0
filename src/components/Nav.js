@@ -9,7 +9,7 @@ import { Button } from "../styles/Button";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
-  const { total_item } = useCartContext();
+  // const { total_item } = useCartContext();
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   const Nav = styled.nav`
@@ -220,9 +220,17 @@ const Nav = () => {
 
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
-              <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> {total_item} </span>
+              {
+                <div className="cart">
+                  <span>
+                    <i className="fas fa-cart-plus"></i>
+                  </span>
+                  <span>0</span>
+
+                </div>
+              }
             </NavLink>
+            
           </li>
         </ul>
 

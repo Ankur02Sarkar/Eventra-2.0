@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 
 const GridView = ({ products }) => {
-  // let i = 0;
+  const [cart, setCart] = useState([]);
+  const handleClick = (item) => {
+    setCart([...cart,item]);
+    console.log("cart is::",cart);
+  };
   return (
     <Wrapper className="section">
       <div className="container grid grid-three-column">
         {products.map((curElem) => {
-          // console.log(i++);
-          // console.log(curElem);
-          return <Product key={curElem.id} {...curElem} />;
+          return (
+            <Product
+              key={curElem.id}
+              curElem={curElem}
+              handleClick={handleClick}
+            />
+          );
         })}
       </div>
     </Wrapper>

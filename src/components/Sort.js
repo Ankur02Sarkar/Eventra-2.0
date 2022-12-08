@@ -9,7 +9,7 @@ const Sort = () => {
   return (
     <Wrapper className="sort-section">
       {/* 1st column  */}
-      <div className="sorting-list--grid">
+      {/* <div className="sorting-list--grid">
         <button
           className={grid_view ? "active sort-btn" : "sort-btn"}
           onClick={setGridView}>
@@ -21,14 +21,14 @@ const Sort = () => {
           onClick={setListView}>
           <BsList className="icon" />
         </button>
-      </div>
+      </div> */}
       {/* 2nd column  */}
       <div className="product-data">
         <p>{`${filter_products.length} Product Available`}</p>
       </div>
 
       {/* 3rd column  */}
-      <div className="sort-selection">
+      {/* <div className="sort-selection">
         <form action="#">
           <label htmlFor="sort"></label>
           <select
@@ -45,7 +45,7 @@ const Sort = () => {
             <option value="z-a">Price(z-a)</option>
           </select>
         </form>
-      </div>
+      </div> */}
     </Wrapper>
   );
 };
