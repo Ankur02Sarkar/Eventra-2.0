@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
@@ -41,12 +41,22 @@ const App = () => {
   };
   const [cart, setCart] = useState([]);
   const handleClick = (item) => {
+    if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
     // cart.push(item);
     console.log("cart is::", cart);
   };
   const [show, setShow] = useState(true);
-
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].stock += d;
+    if (arr[ind].stock === 0) arr[ind].stock = 1;
+    setCart([...arr]);
+  };
+  // useEffect(() => {
+  //   console.log("cart change");
+  // }, [cart]);
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -65,7 +75,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        {show ? "" : <Cart setShow={setShow} cart={cart} setCart={setCart} />}
+        {show ? "" : <Cart setShow={setShow} cart={cart} setCart={setCart} handleChange={handleChange}/>}
         <Footer />
       </Router>
     </ThemeProvider>
