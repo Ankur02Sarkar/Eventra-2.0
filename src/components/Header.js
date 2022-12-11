@@ -4,13 +4,13 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import Eventra from "../assets/Eventra logo.png"
 
-const Header = () => {
+const Header = ({setShow}) => {
   return (
     <MainHeader>
       <NavLink to="/">
         <img src={Eventra} alt="my logo img" style={{width: "100px"}} />
       </NavLink>
-      <Nav />
+      <Nav setShow={setShow} />
     </MainHeader>
   );
 };

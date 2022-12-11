@@ -4,7 +4,7 @@ import ProductList from "./components/ProductList";
 import Sort from "./components/Sort";
 import { useFilterContext } from "./context/filter_context";
 
-const Products = () => {
+const Products = ({handleClick}) => {
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">
@@ -17,7 +17,7 @@ const Products = () => {
             <Sort />
           </div>
           <div className="main-product">
-            <ProductList />
+            <ProductList handleClick={handleClick} />
           </div>
         </section>
       </div>

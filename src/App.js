@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
@@ -12,6 +12,7 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PageNotFound from "./PageNotFound";
+import GridView from "./components/GridView";
 
 const App = () => {
   const theme = {
@@ -38,21 +39,33 @@ const App = () => {
       tab: "998px",
     },
   };
-
+  const [cart, setCart] = useState([]);
+  const handleClick = (item) => {
+    setCart([...cart, item]);
+    // cart.push(item);
+    console.log("cart is::", cart);
+  };
+  const [show, setShow] = useState(true);
+  
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyle />
-        <Header />
+        <Header setShow={setShow} />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
+          <Route
+            path="/products"
+            element={<Products handleClick={handleClick} />}
+          />
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<PageNotFound/>} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
+        {show ? "" : <Cart setShow={setShow} cart={cart} setCart={setCart} />}
         <Footer />
       </Router>
     </ThemeProvider>

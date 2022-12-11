@@ -1,0 +1,14 @@
+.shopcart{
+    height: 700px;
+    width: 1000px;
+    background: #e2e2e2;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+.shopcart .name{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

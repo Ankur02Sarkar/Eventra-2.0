@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Product from "./Product";
 
-const GridView = ({ products }) => {
-  const [cart, setCart] = useState([]);
-  const handleClick = (item) => {
-    setCart([...cart,item]);
-    console.log("cart is::",cart);
-  };
+const GridView = ({ products,handleClick }) => {
+  
   return (
     <Wrapper className="section">
       <div className="container grid grid-three-column">

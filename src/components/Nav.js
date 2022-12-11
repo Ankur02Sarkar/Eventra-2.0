@@ -7,7 +7,7 @@ import { useCartContext } from "../context/cart_context";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "../styles/Button";
 
-const Nav = () => {
+const Nav = ({ setShow }) => {
   const [menuIcon, setMenuIcon] = useState();
   // const { total_item } = useCartContext();
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
@@ -174,7 +174,8 @@ const Nav = () => {
             <NavLink
               to="/"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               Home
             </NavLink>
           </li>
@@ -182,7 +183,8 @@ const Nav = () => {
             <NavLink
               to="/about"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               About
             </NavLink>
           </li>
@@ -190,7 +192,11 @@ const Nav = () => {
             <NavLink
               to="/products"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => {
+                setMenuIcon(false);
+                // setShow(true);
+              }}
+            >
               Products
             </NavLink>
           </li>
@@ -198,7 +204,8 @@ const Nav = () => {
             <NavLink
               to="/contact"
               className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+              onClick={() => setMenuIcon(false)}
+            >
               Contact
             </NavLink>
           </li>
@@ -208,7 +215,8 @@ const Nav = () => {
           {isAuthenticated ? (
             <li>
               <Button
-                onClick={() => logout({ returnTo: window.location.origin })}>
+                onClick={() => logout({ returnTo: window.location.origin })}
+              >
                 Log Out
               </Button>
             </li>
@@ -219,18 +227,16 @@ const Nav = () => {
           )}
 
           <li>
-            <NavLink to="/cart" className="navbar-link cart-trolley--link">
+            <NavLink className="navbar-link cart-trolley--link">
               {
-                <div className="cart">
+                <div className="cart" onClick={() => setShow(false)}>
                   <span>
                     <i className="fas fa-cart-plus"></i>
                   </span>
                   <span>0</span>
-
                 </div>
               }
             </NavLink>
-            
           </li>
         </ul>
 
