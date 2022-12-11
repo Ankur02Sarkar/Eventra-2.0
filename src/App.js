@@ -46,7 +46,7 @@ const App = () => {
     console.log("cart is::", cart);
   };
   const [show, setShow] = useState(true);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
